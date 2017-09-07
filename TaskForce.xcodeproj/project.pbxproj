@@ -22,6 +22,7 @@
 
 /* Begin PBXBuildFile section */
 		FAA7E7161F61549C00BE0E16 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7E7151F61549C00BE0E16 /* Task.swift */; };
+		FAA7E71B1F61589B00BE0E16 /* CoreTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7E71A1F61589B00BE0E16 /* CoreTaskTests.swift */; };
 		OBJ_21 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_29 /* TaskForce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "TaskForce::TaskForce::Product" /* TaskForce.framework */; };
 /* End PBXBuildFile section */
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		FAA7E7151F61549C00BE0E16 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		FAA7E71A1F61589B00BE0E16 /* CoreTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTaskTests.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		"TaskForce::TaskForce::Product" /* TaskForce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TaskForce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"TaskForce::TaskForceTests::Product" /* TaskForceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = TaskForceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +82,7 @@
 		OBJ_11 /* TaskForceTests */ = {
 			isa = PBXGroup;
 			children = (
+				FAA7E71A1F61589B00BE0E16 /* CoreTaskTests.swift */,
 			);
 			name = TaskForceTests;
 			path = Tests/TaskForceTests;
@@ -184,6 +187,9 @@
 					"TaskForce::TaskForce" = {
 						LastSwiftMigration = 0900;
 					};
+					"TaskForce::TaskForceTests" = {
+						LastSwiftMigration = 0900;
+					};
 				};
 			};
 			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "TaskForce" */;
@@ -235,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				FAA7E71B1F61589B00BE0E16 /* CoreTaskTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +291,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -294,6 +302,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGET_NAME = TaskForceTests;
 			};
@@ -303,6 +312,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
