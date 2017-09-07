@@ -9,36 +9,14 @@ import Foundation
 import XCTest
 @testable import TaskForce
 
-// swiftlint:disable identifier_name
 internal class CoreTaskTests: XCTestCase {
-    class SimpleMockTask: Task {
-        let x: Double
-        let y: Double
-        var result: Double?
-
-        init(x: Double, y: Double) {
-            self.x = x
-            self.y = y
-        }
-
-        override func execute() {
-            if isCancelled {
-                finish()
-                return
-            } else {
-                result = x + y
-                finish()
-            }
-        }
-    }
-
     /// Test a task can successfully execute.
     func testExecutingTaskWorks() {
         let opQueue = OperationQueue()
         let expectedResult = 10.0
         let testExpectation = expectation(description: "Waiting for task to complete")
 
-        let task = SimpleMockTask(x: 5.0, y: 5.0)
+        let task = MockAdditionTask(x: 5.0, y: 5.0)
         task.completionBlock = {
             testExpectation.fulfill()
         }
@@ -54,7 +32,7 @@ internal class CoreTaskTests: XCTestCase {
         let opQueue = OperationQueue()
         let testExpectation = expectation(description: "Waiting for task to complete")
 
-        let task = SimpleMockTask(x: 5.0, y: 5.0)
+        let task = MockAdditionTask(x: 5.0, y: 5.0)
         task.completionBlock = {
             testExpectation.fulfill()
         }
@@ -72,8 +50,8 @@ internal class CoreTaskTests: XCTestCase {
         let taskBExpect = expectation(description: "Waiting for task B to complete")
         let expectedResult = 10.0
 
-        let taskA = SimpleMockTask(x: 5.0, y: 5.0)
-        let taskB = SimpleMockTask(x: 5.0, y: 5.0)
+        let taskA = MockAdditionTask(x: 5.0, y: 5.0)
+        let taskB = MockAdditionTask(x: 5.0, y: 5.0)
         taskB.addDependency(taskA)
 
         taskA.completionBlock = { taskAExpect.fulfill() }

@@ -23,6 +23,10 @@
 /* Begin PBXBuildFile section */
 		FAA7E7161F61549C00BE0E16 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7E7151F61549C00BE0E16 /* Task.swift */; };
 		FAA7E71B1F61589B00BE0E16 /* CoreTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7E71A1F61589B00BE0E16 /* CoreTaskTests.swift */; };
+		FAA7E71D1F617C9400BE0E16 /* TaskObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7E71C1F617C9400BE0E16 /* TaskObserver.swift */; };
+		FAA7E7201F617D0900BE0E16 /* BlockTaskObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7E71F1F617D0900BE0E16 /* BlockTaskObserver.swift */; };
+		FAA7E7221F617FB700BE0E16 /* TaskObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7E7211F617FB700BE0E16 /* TaskObserverTests.swift */; };
+		FAA7E7241F617FCD00BE0E16 /* MockAdditionTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7E7231F617FCD00BE0E16 /* MockAdditionTask.swift */; };
 		OBJ_21 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_29 /* TaskForce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "TaskForce::TaskForce::Product" /* TaskForce.framework */; };
 /* End PBXBuildFile section */
@@ -47,6 +51,10 @@
 /* Begin PBXFileReference section */
 		FAA7E7151F61549C00BE0E16 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		FAA7E71A1F61589B00BE0E16 /* CoreTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTaskTests.swift; sourceTree = "<group>"; };
+		FAA7E71C1F617C9400BE0E16 /* TaskObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskObserver.swift; sourceTree = "<group>"; };
+		FAA7E71F1F617D0900BE0E16 /* BlockTaskObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockTaskObserver.swift; sourceTree = "<group>"; };
+		FAA7E7211F617FB700BE0E16 /* TaskObserverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskObserverTests.swift; sourceTree = "<group>"; };
+		FAA7E7231F617FCD00BE0E16 /* MockAdditionTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAdditionTask.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		"TaskForce::TaskForce::Product" /* TaskForce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TaskForce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"TaskForce::TaskForceTests::Product" /* TaskForceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = TaskForceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +79,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FAA7E71E1F617CF800BE0E16 /* Observers */ = {
+			isa = PBXGroup;
+			children = (
+				FAA7E71C1F617C9400BE0E16 /* TaskObserver.swift */,
+				FAA7E71F1F617D0900BE0E16 /* BlockTaskObserver.swift */,
+			);
+			path = Observers;
+			sourceTree = SOURCE_ROOT;
+		};
 		OBJ_10 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				FAA7E71A1F61589B00BE0E16 /* CoreTaskTests.swift */,
+				FAA7E7211F617FB700BE0E16 /* TaskObserverTests.swift */,
+				FAA7E7231F617FCD00BE0E16 /* MockAdditionTask.swift */,
 			);
 			name = TaskForceTests;
 			path = Tests/TaskForceTests;
@@ -120,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				FAA7E7151F61549C00BE0E16 /* Task.swift */,
+				FAA7E71E1F617CF800BE0E16 /* Observers */,
 			);
 			name = TaskForce;
 			path = Sources/TaskForce;
@@ -241,6 +261,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				FAA7E7241F617FCD00BE0E16 /* MockAdditionTask.swift in Sources */,
+				FAA7E7221F617FB700BE0E16 /* TaskObserverTests.swift in Sources */,
 				FAA7E71B1F61589B00BE0E16 /* CoreTaskTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,6 +271,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				FAA7E71D1F617C9400BE0E16 /* TaskObserver.swift in Sources */,
+				FAA7E7201F617D0900BE0E16 /* BlockTaskObserver.swift in Sources */,
 				FAA7E7161F61549C00BE0E16 /* Task.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
