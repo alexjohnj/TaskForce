@@ -10,7 +10,6 @@ import XCTest
 @testable import TaskForce
 
 internal class TaskObserverTests: XCTestCase {
-
     /// Test observer's taskDidStart(_:) method is called
     func testTaskObserverInformedOfStart() {
         let testExpect = expectation(description: "Waiting for observer's didStart notification")
