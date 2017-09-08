@@ -15,7 +15,7 @@ public class BlockTaskObserver {
     /// A block to execute when a `Task` finishes.
     public var onFinish: ((Task, [Error]) -> Void)?
 
-    init(onStart: ((Task) -> Void)? = nil, onCompletion: ((Task, [Error]) -> Void)? = nil) {
+    public init(onStart: ((Task) -> Void)? = nil, onCompletion: ((Task, [Error]) -> Void)? = nil) {
         self.onStart = onStart
         self.onFinish = onCompletion
     }
