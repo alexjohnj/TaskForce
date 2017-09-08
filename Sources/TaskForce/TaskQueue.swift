@@ -118,3 +118,15 @@ public final class TaskQueue {
         tasks.forEach { $0.cancel() }
     }
 }
+
+extension TaskQueue: Equatable {
+    public static func == (lhs: TaskQueue, rhs: TaskQueue) -> Bool {
+        return lhs.operationQueue == rhs.operationQueue
+    }
+}
+
+extension TaskQueue: Hashable {
+    public var hashValue: Int {
+        return operationQueue.hashValue
+    }
+}

@@ -147,4 +147,23 @@ internal class TaskQueueTest: XCTestCase {
         queue.isSuspended = true
         XCTAssertEqual(queue.operationQueue.isSuspended, true)
     }
+
+    // MARK: - Protocol Conformance
+
+    /// Test TaskQueue equality matches OperationQueue equality
+    func testTaskQueueEqualityMatchesOperationQueue() {
+        let queueA = TaskQueue()
+        let queueB = TaskQueue()
+        let queueC = queueA
+
+        XCTAssertNotEqual(queueA, queueB)
+        XCTAssertEqual(queueA, queueC)
+    }
+
+    /// Test TaskQueue hash matches backing OperationQueue hash
+    func testTaskQueueHashMatchesBackingOperationQueue() {
+        let queue = TaskQueue()
+
+        XCTAssertEqual(queue.hashValue, queue.operationQueue.hashValue)
+    }
 }
