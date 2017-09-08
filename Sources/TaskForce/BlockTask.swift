@@ -10,14 +10,13 @@ import Foundation
 public final class BlockTask: Task {
     private let block: (() -> Void)
 
-    init(block: @escaping (() -> Void)) {
+    public init(block: @escaping (() -> Void)) {
         self.block = block
 
         super.init()
     }
 
     override public func execute() {
-//        block { finish() }
         block()
         finish()
     }
