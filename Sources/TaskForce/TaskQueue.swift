@@ -93,7 +93,15 @@ public final class TaskQueue {
 
         task.addObserver(taskLifecycleObserver)
 
+        // Set up requirement dependency tasks
+        let requirementDeps = task.requirements.flatMap { $0.requirementDependencyForTask(task) }
+        requirementDeps.forEach {
+            task.addDependency($0)
+            addTask($0)
+        }
+
         delegate?.taskQueue(self, willAddTask: task)
+        task.willEnqueue()
         operationQueue.addOperation(task)
     }
 

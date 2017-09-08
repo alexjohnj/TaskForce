@@ -24,6 +24,8 @@
 		FA2902DE1F62D9B900606B53 /* TaskQueueDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2902DD1F62D9B900606B53 /* TaskQueueDelegate.swift */; };
 		FA2902E01F62DBB600606B53 /* TaskQueueDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2902DF1F62DBB600606B53 /* TaskQueueDelegateTests.swift */; };
 		FA2902E21F62DC2000606B53 /* MockTaskQueueDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2902E11F62DC2000606B53 /* MockTaskQueueDelegate.swift */; };
+		FA44CDE41F6312B900E58553 /* TaskRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA44CDE31F6312B900E58553 /* TaskRequirement.swift */; };
+		FA44CDE61F63182100E58553 /* TaskRequirementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA44CDE51F63182100E58553 /* TaskRequirementTests.swift */; };
 		FAA7E7161F61549C00BE0E16 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7E7151F61549C00BE0E16 /* Task.swift */; };
 		FAA7E71B1F61589B00BE0E16 /* CoreTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7E71A1F61589B00BE0E16 /* CoreTaskTests.swift */; };
 		FAA7E71D1F617C9400BE0E16 /* TaskObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7E71C1F617C9400BE0E16 /* TaskObserver.swift */; };
@@ -31,6 +33,7 @@
 		FAA7E7221F617FB700BE0E16 /* TaskObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7E7211F617FB700BE0E16 /* TaskObserverTests.swift */; };
 		FAA7E7241F617FCD00BE0E16 /* MockAdditionTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7E7231F617FCD00BE0E16 /* MockAdditionTask.swift */; };
 		FAA7E7261F6189FF00BE0E16 /* TaskQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7E7251F6189FF00BE0E16 /* TaskQueue.swift */; };
+		FAB713AF1F6320F5002740C2 /* MockTaskRequirements.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB713AD1F6320F1002740C2 /* MockTaskRequirements.swift */; };
 		FAE9348C1F629B9D00AD527A /* TaskQueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE9348B1F629B9D00AD527A /* TaskQueueTests.swift */; };
 		FAE9348F1F629D6500AD527A /* BlockTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE9348E1F629D6500AD527A /* BlockTask.swift */; };
 		FAE934911F629E6700AD527A /* BlockTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE934901F629E6700AD527A /* BlockTaskTests.swift */; };
@@ -59,6 +62,8 @@
 		FA2902DD1F62D9B900606B53 /* TaskQueueDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskQueueDelegate.swift; sourceTree = "<group>"; };
 		FA2902DF1F62DBB600606B53 /* TaskQueueDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TaskQueueDelegateTests.swift; path = Tests/TaskForceTests/TaskQueueDelegateTests.swift; sourceTree = SOURCE_ROOT; };
 		FA2902E11F62DC2000606B53 /* MockTaskQueueDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTaskQueueDelegate.swift; sourceTree = "<group>"; };
+		FA44CDE31F6312B900E58553 /* TaskRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRequirement.swift; sourceTree = "<group>"; };
+		FA44CDE51F63182100E58553 /* TaskRequirementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRequirementTests.swift; sourceTree = "<group>"; };
 		FAA7E7151F61549C00BE0E16 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		FAA7E71A1F61589B00BE0E16 /* CoreTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTaskTests.swift; sourceTree = "<group>"; };
 		FAA7E71C1F617C9400BE0E16 /* TaskObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TaskObserver.swift; path = ../Observers/TaskObserver.swift; sourceTree = "<group>"; };
@@ -66,6 +71,7 @@
 		FAA7E7211F617FB700BE0E16 /* TaskObserverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskObserverTests.swift; sourceTree = "<group>"; };
 		FAA7E7231F617FCD00BE0E16 /* MockAdditionTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAdditionTask.swift; sourceTree = "<group>"; };
 		FAA7E7251F6189FF00BE0E16 /* TaskQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskQueue.swift; sourceTree = "<group>"; };
+		FAB713AD1F6320F1002740C2 /* MockTaskRequirements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTaskRequirements.swift; sourceTree = "<group>"; };
 		FAE9348B1F629B9D00AD527A /* TaskQueueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskQueueTests.swift; sourceTree = "<group>"; };
 		FAE9348E1F629D6500AD527A /* BlockTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockTask.swift; sourceTree = "<group>"; };
 		FAE934901F629E6700AD527A /* BlockTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockTaskTests.swift; sourceTree = "<group>"; };
@@ -130,6 +136,8 @@
 				FAA7E7211F617FB700BE0E16 /* TaskObserverTests.swift */,
 				FAE9348D1F629CFC00AD527A /* Mock Tasks */,
 				FAE9348B1F629B9D00AD527A /* TaskQueueTests.swift */,
+				FA44CDE51F63182100E58553 /* TaskRequirementTests.swift */,
+				FAB713AD1F6320F1002740C2 /* MockTaskRequirements.swift */,
 			);
 			name = TaskForceTests;
 			path = Tests/TaskForceTests;
@@ -170,6 +178,7 @@
 				FAA7E7151F61549C00BE0E16 /* Task.swift */,
 				FAE9348E1F629D6500AD527A /* BlockTask.swift */,
 				FA2902DD1F62D9B900606B53 /* TaskQueueDelegate.swift */,
+				FA44CDE31F6312B900E58553 /* TaskRequirement.swift */,
 			);
 			name = TaskForce;
 			path = Sources/TaskForce;
@@ -295,8 +304,10 @@
 				FA2902E01F62DBB600606B53 /* TaskQueueDelegateTests.swift in Sources */,
 				FAE934911F629E6700AD527A /* BlockTaskTests.swift in Sources */,
 				FAA7E7221F617FB700BE0E16 /* TaskObserverTests.swift in Sources */,
+				FA44CDE61F63182100E58553 /* TaskRequirementTests.swift in Sources */,
 				FAE9348C1F629B9D00AD527A /* TaskQueueTests.swift in Sources */,
 				FAA7E71B1F61589B00BE0E16 /* CoreTaskTests.swift in Sources */,
+				FAB713AF1F6320F5002740C2 /* MockTaskRequirements.swift in Sources */,
 				FA2902E21F62DC2000606B53 /* MockTaskQueueDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,6 +322,7 @@
 				FAA7E7161F61549C00BE0E16 /* Task.swift in Sources */,
 				FAE9348F1F629D6500AD527A /* BlockTask.swift in Sources */,
 				FA2902DE1F62D9B900606B53 /* TaskQueueDelegate.swift in Sources */,
+				FA44CDE41F6312B900E58553 /* TaskRequirement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
