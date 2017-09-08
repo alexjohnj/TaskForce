@@ -21,6 +21,9 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		FA2902DE1F62D9B900606B53 /* TaskQueueDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2902DD1F62D9B900606B53 /* TaskQueueDelegate.swift */; };
+		FA2902E01F62DBB600606B53 /* TaskQueueDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2902DF1F62DBB600606B53 /* TaskQueueDelegateTests.swift */; };
+		FA2902E21F62DC2000606B53 /* MockTaskQueueDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2902E11F62DC2000606B53 /* MockTaskQueueDelegate.swift */; };
 		FAA7E7161F61549C00BE0E16 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7E7151F61549C00BE0E16 /* Task.swift */; };
 		FAA7E71B1F61589B00BE0E16 /* CoreTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7E71A1F61589B00BE0E16 /* CoreTaskTests.swift */; };
 		FAA7E71D1F617C9400BE0E16 /* TaskObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7E71C1F617C9400BE0E16 /* TaskObserver.swift */; };
@@ -53,6 +56,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA2902DD1F62D9B900606B53 /* TaskQueueDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskQueueDelegate.swift; sourceTree = "<group>"; };
+		FA2902DF1F62DBB600606B53 /* TaskQueueDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TaskQueueDelegateTests.swift; path = Tests/TaskForceTests/TaskQueueDelegateTests.swift; sourceTree = SOURCE_ROOT; };
+		FA2902E11F62DC2000606B53 /* MockTaskQueueDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTaskQueueDelegate.swift; sourceTree = "<group>"; };
 		FAA7E7151F61549C00BE0E16 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		FAA7E71A1F61589B00BE0E16 /* CoreTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTaskTests.swift; sourceTree = "<group>"; };
 		FAA7E71C1F617C9400BE0E16 /* TaskObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TaskObserver.swift; path = ../Observers/TaskObserver.swift; sourceTree = "<group>"; };
@@ -101,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				FAA7E7231F617FCD00BE0E16 /* MockAdditionTask.swift */,
+				FA2902E11F62DC2000606B53 /* MockTaskQueueDelegate.swift */,
 			);
 			name = "Mock Tasks";
 			path = "Tests/Mock Tasks";
@@ -117,6 +124,7 @@
 		OBJ_11 /* TaskForceTests */ = {
 			isa = PBXGroup;
 			children = (
+				FA2902DF1F62DBB600606B53 /* TaskQueueDelegateTests.swift */,
 				FAA7E71A1F61589B00BE0E16 /* CoreTaskTests.swift */,
 				FAE934901F629E6700AD527A /* BlockTaskTests.swift */,
 				FAA7E7211F617FB700BE0E16 /* TaskObserverTests.swift */,
@@ -161,6 +169,7 @@
 				FAA7E7251F6189FF00BE0E16 /* TaskQueue.swift */,
 				FAA7E7151F61549C00BE0E16 /* Task.swift */,
 				FAE9348E1F629D6500AD527A /* BlockTask.swift */,
+				FA2902DD1F62D9B900606B53 /* TaskQueueDelegate.swift */,
 			);
 			name = TaskForce;
 			path = Sources/TaskForce;
@@ -283,10 +292,12 @@
 			buildActionMask = 0;
 			files = (
 				FAA7E7241F617FCD00BE0E16 /* MockAdditionTask.swift in Sources */,
+				FA2902E01F62DBB600606B53 /* TaskQueueDelegateTests.swift in Sources */,
 				FAE934911F629E6700AD527A /* BlockTaskTests.swift in Sources */,
 				FAA7E7221F617FB700BE0E16 /* TaskObserverTests.swift in Sources */,
 				FAE9348C1F629B9D00AD527A /* TaskQueueTests.swift in Sources */,
 				FAA7E71B1F61589B00BE0E16 /* CoreTaskTests.swift in Sources */,
+				FA2902E21F62DC2000606B53 /* MockTaskQueueDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +310,7 @@
 				FAA7E7261F6189FF00BE0E16 /* TaskQueue.swift in Sources */,
 				FAA7E7161F61549C00BE0E16 /* Task.swift in Sources */,
 				FAE9348F1F629D6500AD527A /* BlockTask.swift in Sources */,
+				FA2902DE1F62D9B900606B53 /* TaskQueueDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

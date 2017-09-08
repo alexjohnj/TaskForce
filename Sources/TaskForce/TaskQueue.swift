@@ -27,6 +27,8 @@ public final class TaskQueue {
 
     // MARK: - Queue Properties
 
+    public weak var delegate: TaskQueueDelegate?
+
     /** A runtime identifier for the queue. The backing operation queue will be given the same name. */
     public var name: String? {
         get { return operationQueue.name }
@@ -76,6 +78,22 @@ public final class TaskQueue {
 
     // MARK: - Queue Management
     public func addTask(_ task: Task) {
+        // Configure observer for task start and finish delegate methods.
+        let taskLifecycleObserver = BlockTaskObserver(
+            onStart: { [weak self] task in
+                if let strongSelf = self {
+                    strongSelf.delegate?.taskQueue(strongSelf, didStartTask: task)
+                }
+            },
+            onCompletion: { [weak self] (task, errors) in
+                if let strongSelf = self {
+                    strongSelf.delegate?.taskQueue(strongSelf, didFinishTask: task, withErrors: errors)
+                }
+            })
+
+        task.addObserver(taskLifecycleObserver)
+
+        delegate?.taskQueue(self, willAddTask: task)
         operationQueue.addOperation(task)
     }
 
