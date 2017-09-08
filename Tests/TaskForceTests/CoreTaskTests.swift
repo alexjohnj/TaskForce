@@ -12,7 +12,7 @@ import XCTest
 internal class CoreTaskTests: XCTestCase {
     /// Test a task can successfully execute.
     func testExecutingTaskWorks() {
-        let opQueue = OperationQueue()
+        let opQueue = TaskQueue()
         let expectedResult = 10.0
         let testExpectation = expectation(description: "Waiting for task to complete")
 
@@ -21,7 +21,7 @@ internal class CoreTaskTests: XCTestCase {
             testExpectation.fulfill()
         }
 
-        opQueue.addOperation(task)
+        opQueue.addTask(task)
         wait(for: [testExpectation], timeout: 0.5)
 
         XCTAssertEqual(task.result, expectedResult)
@@ -29,7 +29,7 @@ internal class CoreTaskTests: XCTestCase {
 
     /// Tests cancelling a task before it is started results in it being finished immediately.
     func testCancellingTaskBeforeStartWorks() {
-        let opQueue = OperationQueue()
+        let opQueue = TaskQueue()
         let testExpectation = expectation(description: "Waiting for task to complete")
 
         let task = MockAdditionTask(x: 5.0, y: 5.0)
@@ -38,14 +38,14 @@ internal class CoreTaskTests: XCTestCase {
         }
 
         task.cancel()
-        opQueue.addOperation(task)
+        opQueue.addTask(task)
         wait(for: [testExpectation], timeout: 0.5)
         XCTAssertNil(task.result)
     }
 
     /// Tests that taskB starts after taskA finisheds when taskB depends on taskA
     func testTaskDependenciesWorks() {
-        let opQueue = OperationQueue()
+        let opQueue = TaskQueue()
         let taskAExpect = expectation(description: "Waiting for task A to complete")
         let taskBExpect = expectation(description: "Waiting for task B to complete")
         let expectedResult = 10.0
@@ -58,8 +58,8 @@ internal class CoreTaskTests: XCTestCase {
         taskB.completionBlock = { taskBExpect.fulfill() }
 
         opQueue.isSuspended = true
-        opQueue.addOperation(taskA)
-        opQueue.addOperation(taskB)
+        opQueue.addTask(taskA)
+        opQueue.addTask(taskB)
         opQueue.isSuspended = false
 
         wait(for: [taskAExpect, taskBExpect], timeout: 0.5)

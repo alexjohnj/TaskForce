@@ -13,14 +13,14 @@ internal class TaskObserverTests: XCTestCase {
     /// Test observer's taskDidStart(_:) method is called
     func testTaskObserverInformedOfStart() {
         let testExpect = expectation(description: "Waiting for observer's didStart notification")
-        let opQueue = OperationQueue()
+        let opQueue = TaskQueue()
         let task = MockAdditionTask(x: 5.0, y: 5.0)
 
         let observer = BlockTaskObserver()
         observer.onStart = { _ in testExpect.fulfill() }
         task.addObserver(observer)
 
-        opQueue.addOperation(task)
+        opQueue.addTask(task)
 
         wait(for: [testExpect], timeout: 0.5)
     }
@@ -28,14 +28,14 @@ internal class TaskObserverTests: XCTestCase {
     /// Test observer's taskDidFinish(_:withErrors:) method is called
     func testTaskObserverInformedOfFinish() {
         let testExpect = expectation(description: "Waiting for observer's didFinish notification")
-        let opQueue = OperationQueue()
+        let opQueue = TaskQueue()
         let task = MockAdditionTask(x: 5.0, y: 5.0)
 
         let observer = BlockTaskObserver()
         observer.onFinish = { (_, _) in testExpect.fulfill() }
         task.addObserver(observer)
 
-        opQueue.addOperation(task)
+        opQueue.addTask(task)
         wait(for: [testExpect], timeout: 0.5)
     }
 
@@ -46,7 +46,7 @@ internal class TaskObserverTests: XCTestCase {
         let observerBStartExpect = expectation(description: "Waiting for observerB didStart notification")
         let observerBFinishExpect = expectation(description: "Waiting for observerB didFinish notification")
 
-        let opQueue = OperationQueue()
+        let opQueue = TaskQueue()
         let task = MockAdditionTask(x: 5.0, y: 5.0)
 
         let observerA = BlockTaskObserver(onStart: { _ in observerAStartExpect.fulfill() },
@@ -56,7 +56,7 @@ internal class TaskObserverTests: XCTestCase {
 
         task.addObservers(observerA, observerB)
 
-        opQueue.addOperation(task)
+        opQueue.addTask(task)
         wait(for: [observerAStartExpect, observerAFinishExpect, observerBStartExpect, observerBFinishExpect],
              timeout: 0.5)
     }
