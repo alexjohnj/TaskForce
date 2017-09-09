@@ -106,8 +106,17 @@
 				FAA7E71F1F617D0900BE0E16 /* BlockTaskObserver.swift */,
 			);
 			name = Observers;
-			path = Sources/TaskForce;
+			path = Sources/TaskForce/Observers;
 			sourceTree = SOURCE_ROOT;
+		};
+		FABF1D031F63E61B00191736 /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				FAA7E7151F61549C00BE0E16 /* Task.swift */,
+				FAE9348E1F629D6500AD527A /* BlockTask.swift */,
+			);
+			path = Tasks;
+			sourceTree = "<group>";
 		};
 		FAE9348D1F629CFC00AD527A /* Mock Tasks */ = {
 			isa = PBXGroup;
@@ -174,9 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				FAA7E71E1F617CF800BE0E16 /* Observers */,
+				FABF1D031F63E61B00191736 /* Tasks */,
 				FAA7E7251F6189FF00BE0E16 /* TaskQueue.swift */,
-				FAA7E7151F61549C00BE0E16 /* Task.swift */,
-				FAE9348E1F629D6500AD527A /* BlockTask.swift */,
 				FA2902DD1F62D9B900606B53 /* TaskQueueDelegate.swift */,
 				FA44CDE31F6312B900E58553 /* TaskRequirement.swift */,
 			);
