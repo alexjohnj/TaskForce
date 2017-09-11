@@ -39,6 +39,8 @@
 		FAE9348C1F629B9D00AD527A /* TaskQueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE9348B1F629B9D00AD527A /* TaskQueueTests.swift */; };
 		FAE9348F1F629D6500AD527A /* BlockTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE9348E1F629D6500AD527A /* BlockTask.swift */; };
 		FAE934911F629E6700AD527A /* BlockTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE934901F629E6700AD527A /* BlockTaskTests.swift */; };
+		FAEFB95C1F66BCE600953AF0 /* TaskGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEFB95B1F66BCE600953AF0 /* TaskGroup.swift */; };
+		FAEFB95E1F66C32000953AF0 /* TaskGroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEFB95D1F66C32000953AF0 /* TaskGroupTests.swift */; };
 		OBJ_21 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_29 /* TaskForce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "TaskForce::TaskForce::Product" /* TaskForce.framework */; };
 /* End PBXBuildFile section */
@@ -79,6 +81,8 @@
 		FAE9348B1F629B9D00AD527A /* TaskQueueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskQueueTests.swift; sourceTree = "<group>"; };
 		FAE9348E1F629D6500AD527A /* BlockTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockTask.swift; sourceTree = "<group>"; };
 		FAE934901F629E6700AD527A /* BlockTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockTaskTests.swift; sourceTree = "<group>"; };
+		FAEFB95B1F66BCE600953AF0 /* TaskGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskGroup.swift; sourceTree = "<group>"; };
+		FAEFB95D1F66C32000953AF0 /* TaskGroupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskGroupTests.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		"TaskForce::TaskForce::Product" /* TaskForce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TaskForce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"TaskForce::TaskForceTests::Product" /* TaskForceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = TaskForceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +123,7 @@
 				FAA7E7151F61549C00BE0E16 /* Task.swift */,
 				FAE9348E1F629D6500AD527A /* BlockTask.swift */,
 				FA4928971F63E79B00A78F0D /* DelayTask.swift */,
+				FAEFB95B1F66BCE600953AF0 /* TaskGroup.swift */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";
@@ -153,6 +158,7 @@
 				FA44CDE51F63182100E58553 /* TaskRequirementTests.swift */,
 				FAB713AD1F6320F1002740C2 /* MockTaskRequirements.swift */,
 				FA4928991F63E96B00A78F0D /* DelayTaskTests.swift */,
+				FAEFB95D1F66C32000953AF0 /* TaskGroupTests.swift */,
 			);
 			name = TaskForceTests;
 			path = Tests/TaskForceTests;
@@ -322,6 +328,7 @@
 				FA44CDE61F63182100E58553 /* TaskRequirementTests.swift in Sources */,
 				FAE9348C1F629B9D00AD527A /* TaskQueueTests.swift in Sources */,
 				FAA7E71B1F61589B00BE0E16 /* CoreTaskTests.swift in Sources */,
+				FAEFB95E1F66C32000953AF0 /* TaskGroupTests.swift in Sources */,
 				FAB713AF1F6320F5002740C2 /* MockTaskRequirements.swift in Sources */,
 				FA2902E21F62DC2000606B53 /* MockTaskQueueDelegate.swift in Sources */,
 			);
@@ -336,6 +343,7 @@
 				FAA7E7261F6189FF00BE0E16 /* TaskQueue.swift in Sources */,
 				FAA7E7161F61549C00BE0E16 /* Task.swift in Sources */,
 				FA4928981F63E79B00A78F0D /* DelayTask.swift in Sources */,
+				FAEFB95C1F66BCE600953AF0 /* TaskGroup.swift in Sources */,
 				FAE9348F1F629D6500AD527A /* BlockTask.swift in Sources */,
 				FA2902DE1F62D9B900606B53 /* TaskQueueDelegate.swift in Sources */,
 				FA44CDE41F6312B900E58553 /* TaskRequirement.swift in Sources */,
