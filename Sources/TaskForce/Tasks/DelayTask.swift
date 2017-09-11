@@ -33,12 +33,12 @@ public class DelayTask: Task {
 
         let executionTime = DispatchTime.now() + delay
 
-        DispatchQueue.global().asyncAfter(deadline: executionTime) {
-            guard self.isCancelled == false else {
+        DispatchQueue.global().asyncAfter(deadline: executionTime) { [weak self] in
+            guard self?.isCancelled == false else {
                 return
             }
 
-            self.finish()
+            self?.finish()
         }
     }
 
