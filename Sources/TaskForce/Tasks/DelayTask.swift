@@ -10,8 +10,19 @@ import Foundation
 public class DelayTask: Task {
     public let delay: TimeInterval
 
+    // Properties to track whether the DelayTask has started. These are needed to avoid a runtime exception (and
+    // crashes) when a DelayTask is cancelled before it is started by its operation queue. See the cancel() method for
+    // some more detail.
+    private var startObserver: BlockTaskObserver?
+    private var hasStarted = false
+
     public init(delay: TimeInterval) {
         self.delay = delay
+
+        super.init()
+
+        startObserver = BlockTaskObserver()
+        startObserver?.onStart = { [weak self] _ in self?.hasStarted = true }
     }
 
     override public final func execute() {
@@ -34,7 +45,15 @@ public class DelayTask: Task {
     override public final func cancel() {
         super.cancel()
 
-        // End the delay if it's cancelled.
-        finish()
+        // We want to end this task immediately if its cancelled, hence why we override `cancel()` to call `finish()`.
+        // However, `finish()` sets the `isFinished` property to `true` which triggers a runtime warning and
+        // unpredictable behaviour if the task hasn't been started yet. For normal tasks this isn't a problem.
+        // Calling cancel simply sets isCancelled = true. When `start()` is called, `finish()` is called and all is
+        // fine. For delay tasks, since we are ending the task in `cancel`, we must check that the task has been
+        // started to avoid the runtime exception. If the task hasn't been started, the task's lifecycle proceeds like
+        // a normal task.
+        if hasStarted {
+            finish()
+        }
     }
 }

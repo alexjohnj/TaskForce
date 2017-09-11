@@ -49,10 +49,13 @@ internal class DelayTaskTests: XCTestCase {
         XCTAssertEqual(Int(delay * 10), Int(measuredDelayTime * 10))
     }
 
-    /// Test a DelayTask that is cancelled finishes immediately
+    /// Test a DelayTask that is cancelled finishes immediately. Note that if DelayTask stops handling cancellation
+    /// of a task before it is started correctly, this method will trigger a runtime warning BUT WILL NOT FAIL. It will
+    /// trigger a crash but probably in a different test case. As a result, BE SURE TO CHECK THE CONSOLE FOR WARNINGS.
     func testCancelledDelayTaskImmediatelyFinishes() {
         let taskFinishExpectation = expectation(description: "Waiting for task to finish")
         let queue = TaskQueue()
+        queue.isSuspended = true
 
         let delay = Date.distantFuture.timeIntervalSinceNow
         let task = DelayTask(delay: delay)
@@ -62,6 +65,7 @@ internal class DelayTaskTests: XCTestCase {
 
         queue.addTask(task)
         task.cancel()
+        queue.isSuspended = false
         wait(for: [taskFinishExpectation], timeout: 0.1)
     }
 }
