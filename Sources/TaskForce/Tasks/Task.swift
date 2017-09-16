@@ -199,8 +199,8 @@ open class Task: Operation {
         fatalError("\(type(of: self)) must override execute() and not call super")
     }
 
-    /// Finish execution of the Task and notify any observers.
-    final public func finish(withErrors errors: [Error] = []) {
+    /// Finish execution of the Task and notify any observers. Subclassers must remember to call super.
+    open func finish(withErrors errors: [Error] = []) {
         isExecuting = false
         isFinished = true
 
