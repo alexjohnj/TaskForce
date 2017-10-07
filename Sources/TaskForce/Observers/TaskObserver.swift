@@ -8,7 +8,7 @@
 import Foundation
 
 /// The task observer protocol declares methods that can be used to track the lifecylce of a task.
-public protocol TaskObserver {
+public protocol TaskObserver: class {
     /// Called when a `Task` begins execution.
     func taskDidStart(_ task: Task)
     /// Called when a `Task` finishes.
