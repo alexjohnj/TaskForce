@@ -1,4 +1,3 @@
-
 # Created by https://www.gitignore.io/api/macos,xcode,swift,emacs
 
 ### Emacs ###
@@ -169,5 +168,6 @@ fastlane/test_output
 !*.xcodeproj/xcshareddata/
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
+!*.xcodeproj/*.plist
 
 # End of https://www.gitignore.io/api/macos,xcode,swift,emacs
