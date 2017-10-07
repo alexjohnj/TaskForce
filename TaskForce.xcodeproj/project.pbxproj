@@ -6,20 +6,6 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		"TaskForce::TaskForcePackageTests::ProductTarget" /* TaskForcePackageTests */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = OBJ_39 /* Build configuration list for PBXAggregateTarget "TaskForcePackageTests" */;
-			buildPhases = (
-			);
-			dependencies = (
-				OBJ_42 /* PBXTargetDependency */,
-			);
-			name = TaskForcePackageTests;
-			productName = TaskForcePackageTests;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		FA2902DE1F62D9B900606B53 /* TaskQueueDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2902DD1F62D9B900606B53 /* TaskQueueDelegate.swift */; };
 		FA2902E01F62DBB600606B53 /* TaskQueueDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2902DF1F62DBB600606B53 /* TaskQueueDelegateTests.swift */; };
@@ -41,7 +27,6 @@
 		FAE934911F629E6700AD527A /* BlockTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE934901F629E6700AD527A /* BlockTaskTests.swift */; };
 		FAEFB95C1F66BCE600953AF0 /* TaskGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEFB95B1F66BCE600953AF0 /* TaskGroup.swift */; };
 		FAEFB95E1F66C32000953AF0 /* TaskGroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEFB95D1F66C32000953AF0 /* TaskGroupTests.swift */; };
-		OBJ_21 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_29 /* TaskForce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "TaskForce::TaskForce::Product" /* TaskForce.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,13 +37,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = "TaskForce::TaskForce";
 			remoteInfo = TaskForce;
-		};
-		FAA7E7141F61544B00BE0E16 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = OBJ_1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = "TaskForce::TaskForceTests";
-			remoteInfo = TaskForceTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -83,7 +61,6 @@
 		FAE934901F629E6700AD527A /* BlockTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockTaskTests.swift; sourceTree = "<group>"; };
 		FAEFB95B1F66BCE600953AF0 /* TaskGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskGroup.swift; sourceTree = "<group>"; };
 		FAEFB95D1F66C32000953AF0 /* TaskGroupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskGroupTests.swift; sourceTree = "<group>"; };
-		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		"TaskForce::TaskForce::Product" /* TaskForce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TaskForce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"TaskForce::TaskForceTests::Product" /* TaskForceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = TaskForceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -176,7 +153,6 @@
 		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
-				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
 				OBJ_10 /* Tests */,
 				OBJ_13 /* Products */,
@@ -207,20 +183,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		"TaskForce::SwiftPMPackageDescription" /* TaskForcePackageDescription */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_17 /* Build configuration list for PBXNativeTarget "TaskForcePackageDescription" */;
-			buildPhases = (
-				OBJ_20 /* Sources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = TaskForcePackageDescription;
-			productName = TaskForcePackageDescription;
-			productType = "com.apple.product-type.framework";
-		};
 		"TaskForce::TaskForce" /* TaskForce */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = OBJ_32 /* Build configuration list for PBXNativeTarget "TaskForce" */;
@@ -283,10 +245,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				"TaskForce::SwiftPMPackageDescription" /* TaskForcePackageDescription */,
 				"TaskForce::TaskForceTests" /* TaskForceTests */,
 				"TaskForce::TaskForce" /* TaskForce */,
-				"TaskForce::TaskForcePackageTests::ProductTarget" /* TaskForcePackageTests */,
 			);
 		};
 /* End PBXProject section */
@@ -308,14 +268,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		OBJ_20 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 0;
-			files = (
-				OBJ_21 /* Package.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		OBJ_26 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
@@ -358,32 +310,9 @@
 			target = "TaskForce::TaskForce" /* TaskForce */;
 			targetProxy = FAA7E7131F61544900BE0E16 /* PBXContainerItemProxy */;
 		};
-		OBJ_42 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = "TaskForce::TaskForceTests" /* TaskForceTests */;
-			targetProxy = FAA7E7141F61544B00BE0E16 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		OBJ_18 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 4 -I /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
-				SWIFT_VERSION = 4.0;
-			};
-			name = Debug;
-		};
-		OBJ_19 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 4 -I /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
-				SWIFT_VERSION = 4.0;
-			};
-			name = Release;
-		};
 		OBJ_24 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -561,30 +490,9 @@
 			};
 			name = Release;
 		};
-		OBJ_40 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Debug;
-		};
-		OBJ_41 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		OBJ_17 /* Build configuration list for PBXNativeTarget "TaskForcePackageDescription" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				OBJ_18 /* Debug */,
-				OBJ_19 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
 		OBJ_2 /* Build configuration list for PBXProject "TaskForce" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -608,15 +516,6 @@
 			buildConfigurations = (
 				OBJ_33 /* Debug */,
 				OBJ_34 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		OBJ_39 /* Build configuration list for PBXAggregateTarget "TaskForcePackageTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				OBJ_40 /* Debug */,
-				OBJ_41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
