@@ -128,14 +128,19 @@ open class Task: Operation {
         }
 
         group.notify(queue: .global()) {
-            var failedRequirements: [RequirementError] = []
+            // NSMutableArray is used here to avoid a compiler bug when performing a release build. Using a Swift
+            // [Error] results in a stack dump from "While running pass #36621 SILFunctionTransform ""Lower Aggregate
+            // SIL Instructions to Multiple Scalar Operations"" on SILFunction
+            // "@_T0s22_ContiguousArrayBufferV08_asCocoaB0s12_NSArrayCore_pyF9TaskForce0H0C16RequirementErrorO_Tg5"."
+            let failedRequirements: NSMutableArray = NSMutableArray()
             for result in results {
                 if case .failed(let requirement) = result {
-                    failedRequirements.append(RequirementError.failed(requirement: requirement))
+                    failedRequirements.add(RequirementError.failed(requirement: requirement))
                 }
             }
 
-            callback(failedRequirements)
+            //swiftlint:disable:next force_cast
+            callback(failedRequirements as! [Error])
         }
     }
 
