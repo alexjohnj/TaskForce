@@ -33,4 +33,21 @@ internal class BlockTaskTests: XCTestCase {
 
         XCTAssertTrue(task.isFinished)
     }
+
+    func testBlockTaskClosureIsPassedTheTaskInstance() {
+        // Given
+        let exp = expectation(description: "Task's body should be executed.")
+        let queue = TaskQueue()
+        var task: BlockTask!
+        task = BlockTask { passedTask in
+            XCTAssert(task === passedTask)
+            exp.fulfill()
+        }
+
+        // When
+        queue.addTask(task)
+
+        // Then
+        wait(for: [exp], timeout: 0.1)
+    }
 }
