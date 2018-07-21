@@ -35,6 +35,7 @@ public class DelayTask: Task {
 
         DispatchQueue.global().asyncAfter(deadline: executionTime) { [weak self] in
             guard self?.isCancelled == false else {
+                self?.finish()
                 return
             }
 
