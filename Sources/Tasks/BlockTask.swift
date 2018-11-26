@@ -28,7 +28,7 @@ public final class BlockTask: Task {
 
         super.init()
     }
-    
+
     /// Instantiates a new task that executes `block` when run.
     public convenience init(block: @escaping () -> Void) {
         self.init { _ in block() }

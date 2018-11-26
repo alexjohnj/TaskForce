@@ -42,7 +42,7 @@
 
 /* Begin PBXFileReference section */
 		FA2902DD1F62D9B900606B53 /* TaskQueueDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskQueueDelegate.swift; sourceTree = "<group>"; };
-		FA2902DF1F62DBB600606B53 /* TaskQueueDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TaskQueueDelegateTests.swift; path = Tests/TaskForceTests/TaskQueueDelegateTests.swift; sourceTree = SOURCE_ROOT; };
+		FA2902DF1F62DBB600606B53 /* TaskQueueDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskQueueDelegateTests.swift; sourceTree = "<group>"; };
 		FA2902E11F62DC2000606B53 /* MockTaskQueueDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTaskQueueDelegate.swift; sourceTree = "<group>"; };
 		FA44CDE31F6312B900E58553 /* TaskRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRequirement.swift; sourceTree = "<group>"; };
 		FA44CDE51F63182100E58553 /* TaskRequirementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRequirementTests.swift; sourceTree = "<group>"; };
@@ -87,19 +87,18 @@
 		FAA7E71E1F617CF800BE0E16 /* Observers */ = {
 			isa = PBXGroup;
 			children = (
-				FAA7E71C1F617C9400BE0E16 /* TaskObserver.swift */,
 				FAA7E71F1F617D0900BE0E16 /* BlockTaskObserver.swift */,
+				FAA7E71C1F617C9400BE0E16 /* TaskObserver.swift */,
 			);
-			name = Observers;
-			path = Sources/TaskForce/Observers;
-			sourceTree = SOURCE_ROOT;
+			path = Observers;
+			sourceTree = "<group>";
 		};
 		FABF1D031F63E61B00191736 /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
-				FAA7E7151F61549C00BE0E16 /* Task.swift */,
 				FAE9348E1F629D6500AD527A /* BlockTask.swift */,
 				FA4928971F63E79B00A78F0D /* DelayTask.swift */,
+				FAA7E7151F61549C00BE0E16 /* Task.swift */,
 				FAEFB95B1F66BCE600953AF0 /* TaskGroup.swift */,
 			);
 			path = Tasks;
@@ -110,35 +109,25 @@
 			children = (
 				FAA7E7231F617FCD00BE0E16 /* MockAdditionTask.swift */,
 				FA2902E11F62DC2000606B53 /* MockTaskQueueDelegate.swift */,
+				FAB713AD1F6320F1002740C2 /* MockTaskRequirements.swift */,
 			);
-			name = "Mock Tasks";
-			path = "Tests/Mock Tasks";
-			sourceTree = SOURCE_ROOT;
+			path = "Mock Tasks";
+			sourceTree = "<group>";
 		};
 		OBJ_10 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_11 /* TaskForceTests */,
-			);
-			name = Tests;
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_11 /* TaskForceTests */ = {
-			isa = PBXGroup;
-			children = (
-				FA2902DF1F62DBB600606B53 /* TaskQueueDelegateTests.swift */,
-				FAA7E71A1F61589B00BE0E16 /* CoreTaskTests.swift */,
 				FAE934901F629E6700AD527A /* BlockTaskTests.swift */,
-				FAA7E7211F617FB700BE0E16 /* TaskObserverTests.swift */,
-				FAE9348D1F629CFC00AD527A /* Mock Tasks */,
-				FAE9348B1F629B9D00AD527A /* TaskQueueTests.swift */,
-				FA44CDE51F63182100E58553 /* TaskRequirementTests.swift */,
-				FAB713AD1F6320F1002740C2 /* MockTaskRequirements.swift */,
+				FAA7E71A1F61589B00BE0E16 /* CoreTaskTests.swift */,
 				FA4928991F63E96B00A78F0D /* DelayTaskTests.swift */,
 				FAEFB95D1F66C32000953AF0 /* TaskGroupTests.swift */,
+				FAA7E7211F617FB700BE0E16 /* TaskObserverTests.swift */,
+				FA2902DF1F62DBB600606B53 /* TaskQueueDelegateTests.swift */,
+				FAE9348B1F629B9D00AD527A /* TaskQueueTests.swift */,
+				FA44CDE51F63182100E58553 /* TaskRequirementTests.swift */,
+				FAE9348D1F629CFC00AD527A /* Mock Tasks */,
 			);
-			name = TaskForceTests;
-			path = Tests/TaskForceTests;
+			path = Tests;
 			sourceTree = SOURCE_ROOT;
 		};
 		OBJ_13 /* Products */ = {
@@ -162,22 +151,13 @@
 		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_8 /* TaskForce */,
-			);
-			name = Sources;
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_8 /* TaskForce */ = {
-			isa = PBXGroup;
-			children = (
-				FAA7E71E1F617CF800BE0E16 /* Observers */,
-				FABF1D031F63E61B00191736 /* Tasks */,
 				FAA7E7251F6189FF00BE0E16 /* TaskQueue.swift */,
 				FA2902DD1F62D9B900606B53 /* TaskQueueDelegate.swift */,
 				FA44CDE31F6312B900E58553 /* TaskRequirement.swift */,
+				FAA7E71E1F617CF800BE0E16 /* Observers */,
+				FABF1D031F63E61B00191736 /* Tasks */,
 			);
-			name = TaskForce;
-			path = Sources/TaskForce;
+			path = Sources;
 			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
@@ -187,9 +167,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = OBJ_32 /* Build configuration list for PBXNativeTarget "TaskForce" */;
 			buildPhases = (
+				FAA7E7171F61556300BE0E16 /* SwiftLint */,
 				OBJ_35 /* Sources */,
 				OBJ_37 /* Frameworks */,
-				FAA7E7171F61556300BE0E16 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -223,7 +203,7 @@
 		OBJ_1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1010;
 				TargetAttributes = {
 					"TaskForce::TaskForce" = {
 						LastSwiftMigration = 0900;
@@ -245,25 +225,26 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				"TaskForce::TaskForceTests" /* TaskForceTests */,
 				"TaskForce::TaskForce" /* TaskForce */,
+				"TaskForce::TaskForceTests" /* TaskForceTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		FAA7E7171F61556300BE0E16 /* ShellScript */ = {
+		FAA7E7171F61556300BE0E16 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = SwiftLint;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -360,11 +341,13 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
@@ -458,11 +441,13 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
