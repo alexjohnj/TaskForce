@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name                      = 'TaskForce'
-  spec.version                   = '0.2.1'
+  spec.version                   = '0.2.2'
   spec.license                   = { :type => 'MIT' }
   spec.homepage                  = 'https://github.com/alexjohnj/TaskForce'
   spec.authors                   = { 'Alex Jackson' => 'alex@alexj.org' }
