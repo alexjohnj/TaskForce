@@ -134,7 +134,8 @@ extension TaskQueue: Equatable {
 }
 
 extension TaskQueue: Hashable {
-    public var hashValue: Int {
-        return operationQueue.hashValue
+
+    public func hash(into hasher: inout Hasher) {
+        operationQueue.hash(into: &hasher)
     }
 }

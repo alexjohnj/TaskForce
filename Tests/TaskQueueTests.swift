@@ -159,11 +159,4 @@ internal class TaskQueueTest: XCTestCase {
         XCTAssertNotEqual(queueA, queueB)
         XCTAssertEqual(queueA, queueC)
     }
-
-    /// Test TaskQueue hash matches backing OperationQueue hash
-    func testTaskQueueHashMatchesBackingOperationQueue() {
-        let queue = TaskQueue()
-
-        XCTAssertEqual(queue.hashValue, queue.operationQueue.hashValue)
-    }
 }
