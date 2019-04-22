@@ -125,6 +125,12 @@ public final class TaskQueue {
     public func cancelAllTasks() {
         tasks.forEach { $0.cancel() }
     }
+
+    /// Blocks the current thread until all enqueued tasks and operations finish.
+    ///
+    public func waitUntilAllOperationsAreFinished() {
+        operationQueue.waitUntilAllOperationsAreFinished()
+    }
 }
 
 extension TaskQueue: Equatable {
