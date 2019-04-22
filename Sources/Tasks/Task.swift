@@ -37,6 +37,14 @@ import Foundation
  finish immediately and an array of `RequirementError`s will be passed to any interested observers.
 
  **Note**: A `Task` with unsatisfied requirements will *not* be marked as cancelled.
+
+ # Use with OperationQueue
+
+ As `Task`s are just `Operation` subclasses, they can be enqueued on a standard `OperationQueue`. They will function as
+ asynchronous operations.
+
+ The task requirement feature relies on coordination between the `Task` and its `TaskQueue`. As a result, task
+ requirments will not be respected when a `Task` is enqued on an `OperationQueue`.
  */
 open class Task: Operation {
     // MARK: Associated Types
@@ -46,20 +54,28 @@ open class Task: Operation {
     }
 
     // MARK: Properties
+
     // Tasks should only be executed from operation queues so these properties are always false.
     override final public var isAsynchronous: Bool { return false }
     override final public var isConcurrent: Bool { return isAsynchronous }
 
+    /// `true` when a task is enqued on a `TaskQueue` instead of an `OperationQueue`.
+    private var isEnquedOnTaskQueue = false
+
     private var _ready: Bool = false
     override final public private(set) var isReady: Bool {
         get {
-            return _ready
+            return isEnquedOnTaskQueue ? _ready : super.isReady
         }
 
         set {
-            willChangeValue(forKey: "isReady")
-            _ready = newValue
-            didChangeValue(forKey: "isReady")
+            if isEnquedOnTaskQueue {
+                willChangeValue(forKey: "isReady")
+                _ready = newValue
+                didChangeValue(forKey: "isReady")
+            } else {
+                assertionFailure("Setter for Task isReady property invoked on task that was not enqued on a TaskQueue")
+            }
         }
     }
 
@@ -163,6 +179,8 @@ open class Task: Operation {
 
     /// Call when a Task is about to be added to a TaskQueue
     internal final func willEnqueue() {
+        isEnquedOnTaskQueue = true
+
         if requirements.isEmpty {
             isReady = true
         } else {

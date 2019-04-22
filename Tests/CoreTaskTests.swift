@@ -68,4 +68,53 @@ internal class CoreTaskTests: XCTestCase {
         XCTAssertEqual(taskB.result, expectedResult)
     }
 
+    /// Tests a task can be executed on a standard operation queue.
+    ///
+    /// Task requirements rely on coordination between the task and its associated task queue. This won't happen if the
+    /// task is enqued on a standard `OperationQueue` which could leave the task in an indefinite pending state while it
+    /// waits for requirements to be satisfied.
+    //
+    func testTaskCanExecuteOnStandardOperationQueue() {
+        // Given
+        let opQueue = OperationQueue()
+        opQueue.isSuspended = true
+        let exp = expectation(description: "The task's body is called")
+        let task = BlockTask {
+            exp.fulfill()
+        }
+
+        // When
+        opQueue.addOperation(task)
+        opQueue.isSuspended = false
+
+        // Then
+        waitForExpectations(timeout: 0.3)
+    }
+
+    /// Tests a task's standard operation dependencies work on a normal operation queue.
+    func testTaskDependenciesWorkOnStandardOperationQueue() {
+        // Given
+        let opQueue = OperationQueue()
+        opQueue.isSuspended = true
+
+        let taskAExp = expectation(description: "Task A's body is called")
+        let taskBExp = expectation(description: "Task B's body is called")
+
+        let taskA = BlockTask {
+            taskAExp.fulfill()
+        }
+        let taskB = BlockTask {
+            taskBExp.fulfill()
+        }
+
+        taskB.addDependency(taskA)
+
+        // When
+        opQueue.addOperations([taskA, taskB], waitUntilFinished: false)
+        opQueue.isSuspended = false
+
+        // Then
+        waitForExpectations(timeout: 0.3)
+    }
+
 }
